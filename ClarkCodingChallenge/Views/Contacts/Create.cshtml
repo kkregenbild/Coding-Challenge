@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Contacts Page";
+}
+@using static ClarkCodingChallenge.Models.Contact
+<form method="post">
+    <table>
+       <tr>
+           <td>
+               First Name:
+           </td>
+           <td>
+                <input type="text" name="FirstName" id="FirstName" required />
+            </td>
+       </tr>
+       <tr>
+           <td>
+               Last Name:
+           </td>
+           <td>
+               <input type="text" name="LastName" id="LastName" required />
+           </td>
+       </tr>
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                <input type="email" name="Email" id="Email" required />
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Create" onclick="return validateEmail()" />
+</form>
