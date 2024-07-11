@@ -13,9 +13,9 @@ namespace ClarkCodingChallenge.Controllers
         public readonly ContactsService _contactsService = new ContactsService();
 
         [HttpGet("")]
-        public IActionResult Get([FromQuery] string lastName = null, [FromQuery] string ordering = "asc")
+        public IActionResult Get([FromQuery] string lastName = null, [FromQuery] string order = "asc")
         {
-            List<Contact> contacts = _contactsService.GetFilteredAndOrderedContacts(lastName, ordering);
+            List<Contact> contacts = _contactsService.GetFilteredAndOrderedContacts(lastName, order);
             return Json(contacts);
         }
     }

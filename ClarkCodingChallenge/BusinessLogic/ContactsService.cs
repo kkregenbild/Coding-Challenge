@@ -10,11 +10,10 @@ namespace ClarkCodingChallenge.BusinessLogic
     public class ContactsService
     {
         public ContactsDataAccess _dataAccess = new ContactsDataAccess();
-        public Contact CreateContact(string firstName, string lastName, string Email)
+        public void CreateContact(string firstName, string lastName, string Email)
         {
             Contact newContact = new Contact(firstName, lastName, Email);
             _dataAccess.SaveContactToList(newContact);
-            return newContact;
         }
 
         public List<Contact> GetFilteredAndOrderedContacts(string lastName = null, string ordering = null)
